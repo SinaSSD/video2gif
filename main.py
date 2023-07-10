@@ -66,7 +66,7 @@ class MainWindow(Gtk.Window):
 		dialog = Gtk.FileChooserDialog(title="Select Video File",parent=self,action=Gtk.FileChooserAction.OPEN)
 		dialog_filter = Gtk.FileFilter()
 		dialog_filter.set_name("Videos")
-		video_support = ['*.mp4','*.m4p','*.m4v','*.mpg','*.mpeg','*.mkv','*.flv','*.vob','*.ogg','*.ogv','*.gif','*.drc','*.gifv','*.mng','*.avi','*.wmv','*.mov','*.qt']
+		video_support = ['*.mp4','*.m4p','*.m4v','*.mpg','*.mpeg','*.mkv','*.flv','*.vob','*.ogg','*.ogv','*.gif','*.drc','*.gifv','*.mng','*.avi','*.wmv','*.mov'] #  https://en.wikipedia.org/wiki/Video_file_format
 		for i in video_support:
 			dialog_filter.add_pattern(i)  # whats the pattern for a video file
 		dialog.add_filter(dialog_filter)

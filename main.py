@@ -45,6 +45,7 @@ class MainWindow(Gtk.Window):
 		target_file_label = Gtk.Label()
 		target_file_label.set_text("Target File :")
 		target_file_label.set_xalign(0)
+		progress_bar = Gtk.ProgressBar()
 
 		box.add(source_file_label)
 		source_box = Gtk.Box(spacing=5,orientation=Gtk.Orientation.HORIZONTAL)
@@ -57,6 +58,8 @@ class MainWindow(Gtk.Window):
 
 		box.add(target_file_label)
 		box.add(target_address_input)
+
+		box.add(progress_bar)
 
 		convert_button.connect("clicked",self.convert_button_clicked)
 		box.add(convert_button)
@@ -101,6 +104,7 @@ class MainWindow(Gtk.Window):
 		os.system(command)
 		print('Proccess FFMPEG Done !')
 
+	
 
 window = MainWindow()
 window.connect("delete-event",Gtk.main_quit)
